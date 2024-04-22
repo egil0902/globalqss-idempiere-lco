@@ -2,8 +2,9 @@ pipeline {
     agent none
     environment {
         IDEMPIERE_VERSION = "10.0.0"
-        PLUGIN_NAME = JOB_NAME.startsWith('org.globalqss.idempiere.LCO.detailednames') ? "org.globalqss.idempiere.LCO.detailednames" : ""
-        PLUGIN_NAME2 = JOB_NAME.startsWith('org.globalqss.idempiere.LCO.withholdings') ? "org.globalqss.idempiere.LCO.withholdings" : ""
+        // Utilizamos JOB_BASE_NAME para obtener el nombre del proyecto sin el número de ejecución
+        PLUGIN_NAME = env.JOB_BASE_NAME == 'org.globalqss.idempiere.LCO.detailednames' ? "org.globalqss.idempiere.LCO.detailednames" : ""
+        PLUGIN_NAME2 = env.JOB_BASE_NAME == 'org.globalqss.idempiere.LCO.withholdings' ? "org.globalqss.idempiere.LCO.withholdings" : ""
     }
     stages {
         stage('Compile') {
