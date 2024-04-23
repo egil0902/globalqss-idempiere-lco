@@ -7,6 +7,7 @@ pipeline {
         stage('Set Environment Variables') {
             steps {
                 script {
+                    echo "JOB_NAME received: ${env.JOB_NAME}"
                     // Definir las variables de entorno basadas en JOB_NAME
                     def PLUGIN_NAME = ''
                     def PLUGIN_NAME2 = ''
