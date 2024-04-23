@@ -18,7 +18,7 @@ pipeline {
                 dir('target-platform') {
                     git branch: '10', url: 'https://github.com/ingeint/idempiere-target-platform-plugin.git'
                     script {
-                        def pluginName = 'PLUGIN_NAME ?: PLUGIN_NAME2'
+                        def pluginName = PLUGIN_NAME ?: PLUGIN_NAME2
                         if (!pluginName) {
                             error "Plugin name not found"
                         }
