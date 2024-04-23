@@ -11,9 +11,9 @@ pipeline {
                     // Definir las variables de entorno basadas en JOB_NAME
                     def PLUGIN_NAME = ''
                     def PLUGIN_NAME2 = ''
-                    if (env.JOB_NAME == 'org.globalqss.idempiere.LCO.detailednames') {
+                    if (env.JOB_NAME == 'org.globalqss.idempiere.LCO.detailednames/10.0.0') {
                         PLUGIN_NAME = 'org.globalqss.idempiere.LCO.detailednames'
-                    } else if (env.JOB_NAME == 'org.globalqss.idempiere.LCO.withholdings') {
+                    } else if (env.JOB_NAME == 'org.globalqss.idempiere.LCO.withholdings/10.0.0') {
                         PLUGIN_NAME2 = 'org.globalqss.idempiere.LCO.withholdings'
                     }
                     // Ahora pluginName estará disponible en todo el script
