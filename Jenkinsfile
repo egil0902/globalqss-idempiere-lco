@@ -2,9 +2,9 @@ pipeline {
     agent none
     environment {
         IDEMPIERE_VERSION = "10.0.0"
-        // Utilizamos comillas dobles para asignar los valores de las variables de entorno
-        PLUGIN_NAME = env.JOB_BASE_NAME == 'org.globalqss.idempiere.LCO.detailednames' ? "org.globalqss.idempiere.LCO.detailednames" : ""
-        PLUGIN_NAME2 = env.JOB_BASE_NAME == 'org.globalqss.idempiere.LCO.withholdings' ? "org.globalqss.idempiere.LCO.withholdings" : ""
+       
+        PLUGIN_NAME = ${env.JOB_NAME} == org.globalqss.idempiere.LCO.detailednames ? "org.globalqss.idempiere.LCO.detailednames" : ""
+        PLUGIN_NAME2 = ${env.JOB_NAME} == org.globalqss.idempiere.LCO.withholdings ? "org.globalqss.idempiere.LCO.withholdings" : ""
     }
     stages {
         stage('Compile') {
